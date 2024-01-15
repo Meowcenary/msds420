@@ -1,0 +1,118 @@
+> Consider various data types, including string, integer, float, array, list, dictionary, and data frame. What has been
+your experience in working with these data types in programming? How would you distinguish between dynamically typed
+versus statically typed languages?  Provide examples.
+
+I've worked with all the listed data types over my years of programming, but I have used data frames the least as most
+of my work is based around web development and less data analysis. In my previous course on programming in Golang I was
+able to get a little bit of experience with data frames, but only for very basic tasks.
+
+Statically typed languages determine the types for variables when the program is compiled. The compiler will enforce
+rules on what types can interact with each other and throw errors when it finds types that the language does not allow
+to interact. Using C, here is a small example of adding two integers and printing the result:
+
+This version uses the correct types and will compile with the command `gcc main.c`
+```
+// main.c
+#include <stdio.h>
+
+int main() {
+	int x = 1;
+	int y = 2;
+
+	printf("%d", x + y);
+
+	return 0;
+}
+```
+
+This version will raise errors as C does not allow integers and character arrays (basically strings) to be added
+together
+```
+// main.c
+#include <stdio.h>
+
+int main() {
+	int x = 1;
+	char y[] = "test";
+
+	printf("%d", x + y);
+
+	return 0;
+}
+```
+The output from my machine:
+```
+main.c:7:15: warning: format specifies type 'int' but the argument has type 'char *' [-Wformat]
+        printf("%d", x + y);
+                ~~   ^~~~~
+                %s
+1 warning generated.
+```
+
+Dynamically typed langauges determine the types for variables when the program runs. If there are errors with how
+variables interact due to the type they have it will only be uncoverd at runtime. One way to mitigate these errors is to
+use a linter, a program to check for syntax errors and to enfoce a code style. Using Ruby, here is a small example of
+adding two integers and printing the result:
+
+```
+# main.rb
+x = 1
+y = 2
+puts(x + y)
+```
+
+This can be run with `ruby main.rb` and will simply print "3".
+
+Static and weak typing are separate of "strong" and "weak" typing which is basically a spectrum ranging from something
+very weakly typed such as Javascript that allows for almost any type to interact with any other (funny video on this:
+https://www.youtube.com/watch?v=FhNwLvCYlY4) to something like C++ that checks to see if types can interact and throws
+an error if the language definition doesn't allow it. This is a topic that always garners a lot of opinions since these
+are not particularly well defined terms, but from my perspective it comes down to how much the language will work to
+make different types work together without programmer intervention. Here is an example of Ruby code that will fail
+because the types are incompatible for the operation:
+
+```
+# main.rb
+x = 1
+y = "2"
+puts(x + y)
+```
+
+This can be run with `ruby main.rb` and will throw something like this:
+```
+main.rb:4:in `+': String can't be coerced into Integer (TypeError)
+	from main.rb:4:in `<main>'
+```
+
+> Consider various file types, including comma-delimited (csv), JavaScript object notation (JSON), and extensible markup
+language (XML). How are these different from one another, and what has been your experience with them?
+
+CSV format files have a record per a row of the file and will delimit data items (columns) on the record with a comma.
+Optionally the first row of the file can have comma delimited headers that are names for the columns. I try to avoid
+using CSV files since they're a bit more difficult to work with than JSON, but I sometimes get requests to run a report
+that outputs CSV because it is supported by Microsoft Excel.
+
+XML format files use a tag structure to store data and nests tags within other tags to divide records and data items.
+I don't see pure XML files very often anymore, but HTML is a subset of XML so I guess you could argue that in a sense
+I'm using it quite often.
+
+JSON (Javascript Object Notation) files, as the name implies, use a syntax that comes from the Javascript langauge. The
+big advantage of JSON is that it allows for arrays to be used within records. It's a very popular file format and many
+modern langauges either include libraries to assist in using JSON or have popular third party libraries available. I've
+used JSON a lot over the years and particularly when building out REST APIs.
+
+> How are the roles of the backend developer, data engineer, and database administrator the same or different?
+
+In a broad sense these are all IT roles that will use some sort of programming langauge to solve problems. Specifically
+these roles differ in what types of problems they would be dealing with. From my perspective a backend developer is
+concerned with building an application that will make use of a database and will focus on how to effectively use this
+data with classes they define for their application. A data engineer would be concerned with data cleaning and writing
+programs to fit the data into a specified structure. Finally, a database administrator would be concerned with the
+actual storage of the data in the database (schema structure, indexing), how to efficiently provide access to the
+database (e.g dividing data across servers), and perhaps offering reviews on queries that the other roles are writing.
+
+> What skills and competencies do you hope to learn by the end of this course?
+
+I'm most interested in getting more hands on experience with NoSQL and learning about graph databases. I've amost
+exclusively used relational databases over the years and it would be interesting to see how they compare to these
+approaches. I worry that because I've become so accustomed to one approach I overlook the merits of other solutions.
