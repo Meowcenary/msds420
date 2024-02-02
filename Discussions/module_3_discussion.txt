@@ -1,0 +1,39 @@
+---
+Based on the entity relationship diagram (ERD) we create, we derive the relations for the relational database
+application. The entity in the ERD is represented by a relation. Explain the scenario in which the relationship is
+represented by a relation as well and provide an example to illustrate that.
+---
+
+Admittedly I had a bit of trouble understanding this question at first. The phrasing kind of threw me for a loop I
+guess. A scenario where a realtionship is represented by a relation is when there is a many to many relationship between
+two entities. I think it also applies in a ternary relationship, but I guess I'll find out after posting. An example of
+this that appears in the reading dealt with an ERD that had the entities "Technician", "Project", and "Notebook". In the
+first iteration of the example technicians can be actively working on several projects using the same notebooks on each
+project (i.e the notebooks are shared). Three many to many relationsips can be created from this: <picture goes here>
+
+If each technician uses exactly one notebook for each project and the notebook belongs to only one technician a one to
+one ternary relationship would be used instead: <picture goes here>
+
+---
+The derived relations from the entity relationship diagram (ERD) go through the normalization process: moving from 1NF,
+to 2NF, and finally to 3NF in order to eliminate partial dependencies and transitive dependencies. Explain why it is
+significant to eliminate those dependencies.
+---
+
+By eliminating these dependencies redunancy in the data is reduced which in turn reduces inconsistencies that might
+arise as the datbase is updated. It also organizes the data in a consistent way that makes writing queries easier and
+can reduce storage needs as duplicates are eliminated.
+
+First Normal Form (1NF) requires that there is a primary key for all tables, that there are no duplicate rows or columns
+, and that each column has one value for each row in the table.
+
+Second Normal Form (2NF) builds on the requirements of first normal form. It additionally requires that there are no
+partial dependencies. A partial dependency is when a non-key attribute can be determined by a subset of the primary key,
+but not the entire key. This occurs when a table has redundant data.
+
+Third Normal Form (3NF) builds on the requirements of second normal form. It additionally requires the elimination of
+transitive partial dependencies. Abstractly a transitive property is when a relationship has attributes A, B, and C
+where A has a direct dependency relationship with B and B has a direct dependency relationship with C. An example of a
+transitive dependency would be if you had a table Authors with the columns author_id, author, author_nationality, and
+book. Through book we can get the author, through author we can get author nationality, and therefore by the transitive
+property we can get the author nationality from book.

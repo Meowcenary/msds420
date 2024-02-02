@@ -1,0 +1,236 @@
+    INFO: 2024-01-16 15:48:53,646:               log.py:   20: Logging to /Users/esn2981/personal-repos/msds420/mdpdf.log
+   DEBUG: 2024-01-16 15:48:53,646:               cli.py:  103: assignment1/assignment_1_final_deliverable.md
+    INFO: 2024-01-16 15:48:53,647:         converter.py:   14: assignment1/assignment_1_final_deliverable.md
+   DEBUG: 2024-01-16 15:48:53,654:      pdf_renderer.py:  470: printSegment: ﻿
+   DEBUG: 2024-01-16 15:48:53,865:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2024-01-16 15:48:53,867:      pdf_renderer.py:  470: printSegment: 1.1 How many invoices are there?
+   DEBUG: 2024-01-16 15:48:53,870:      pdf_renderer.py:  470: printSegment: SELECT COUNT(*) FROM invoice;
+   DEBUG: 2024-01-16 15:48:53,873:      pdf_renderer.py:  470: printSegment:  count
+   DEBUG: 2024-01-16 15:48:53,874:      pdf_renderer.py:  470: printSegment: -------
+   DEBUG: 2024-01-16 15:48:53,875:      pdf_renderer.py:  470: printSegment:           8
+   DEBUG: 2024-01-16 15:48:53,901:      pdf_renderer.py:  470: printSegment: 1.2 List the invoice numbers and the invoice dates
+   DEBUG: 2024-01-16 15:48:53,903:      pdf_renderer.py:  470: printSegment: SELECT inv_number, inv_date FROM invoice
+   DEBUG: 2024-01-16 15:48:53,904:      pdf_renderer.py:  470: printSegment:  inv_number |    inv_date
+   DEBUG: 2024-01-16 15:48:53,905:      pdf_renderer.py:  470: printSegment: ------------+------------
+   DEBUG: 2024-01-16 15:48:53,906:      pdf_renderer.py:  470: printSegment:               1001 | 2016-01-16
+   DEBUG: 2024-01-16 15:48:53,907:      pdf_renderer.py:  470: printSegment:               1002 | 2016-01-16
+   DEBUG: 2024-01-16 15:48:53,909:      pdf_renderer.py:  470: printSegment:               1003 | 2016-01-16
+   DEBUG: 2024-01-16 15:48:53,910:      pdf_renderer.py:  470: printSegment:               1004 | 2016-01-17
+   DEBUG: 2024-01-16 15:48:53,911:      pdf_renderer.py:  470: printSegment:               1005 | 2016-01-17
+   DEBUG: 2024-01-16 15:48:53,912:      pdf_renderer.py:  470: printSegment:               1006 | 2016-01-17
+   DEBUG: 2024-01-16 15:48:53,913:      pdf_renderer.py:  470: printSegment:               1007 | 2016-01-17
+   DEBUG: 2024-01-16 15:48:53,915:      pdf_renderer.py:  470: printSegment:               1008 | 2016-01-17
+   DEBUG: 2024-01-16 15:48:53,916:      pdf_renderer.py:  470: printSegment: 2.1 How many customers are there?
+   DEBUG: 2024-01-16 15:48:53,917:      pdf_renderer.py:  470: printSegment: SELECT COUNT(*) FROM customer;
+   DEBUG: 2024-01-16 15:48:53,918:      pdf_renderer.py:  470: printSegment:  count
+   DEBUG: 2024-01-16 15:48:53,919:      pdf_renderer.py:  470: printSegment: -------
+   DEBUG: 2024-01-16 15:48:53,920:      pdf_renderer.py:  470: printSegment:         10
+   DEBUG: 2024-01-16 15:48:53,922:      pdf_renderer.py:  470: printSegment: 2.2 List the customer codes and customer names.
+   DEBUG: 2024-01-16 15:48:53,925:      pdf_renderer.py:  470: printSegment: SELECT cus_code, CONCAT(cus_fname, ' ', cus_initial, '. ', cus_lname) as
+   DEBUG: 2024-01-16 15:48:53,926:      pdf_renderer.py:  470: printSegment: cus_name FROM customer;
+   DEBUG: 2024-01-16 15:48:53,927:      pdf_renderer.py:  470: printSegment:  cus_code |          cus_name
+   DEBUG: 2024-01-16 15:48:53,929:      pdf_renderer.py:  470: printSegment: ----------+-------------------
+   DEBUG: 2024-01-16 15:48:53,930:      pdf_renderer.py:  470: printSegment:         10010 | Alfred A. Ramas
+   DEBUG: 2024-01-16 15:48:53,931:      pdf_renderer.py:  470: printSegment:         10011 | Leona K. Dunne
+   DEBUG: 2024-01-16 15:48:53,932:      pdf_renderer.py:  470: printSegment:         10012 | Kathy W. Smith
+   DEBUG: 2024-01-16 15:48:53,933:      pdf_renderer.py:  470: printSegment:         10013 | Paul F. Olowski
+   DEBUG: 2024-01-16 15:48:53,935:      pdf_renderer.py:  470: printSegment:         10014 | Myron . Orlando
+   DEBUG: 2024-01-16 15:48:53,936:      pdf_renderer.py:  470: printSegment:         10015 | Amy B. O'Brian
+   DEBUG: 2024-01-16 15:48:53,937:      pdf_renderer.py:  470: printSegment:         10016 | James G. Brown
+   DEBUG: 2024-01-16 15:48:53,938:      pdf_renderer.py:  470: printSegment:         10017 | George . Williams
+   DEBUG: 2024-01-16 15:48:53,939:      pdf_renderer.py:  470: printSegment:         10018 | Anne G. Farriss
+   DEBUG: 2024-01-16 15:48:53,940:      pdf_renderer.py:  470: printSegment:         10019 | Olette K. Smith
+   DEBUG: 2024-01-16 15:48:53,942:      pdf_renderer.py:  470: printSegment: 3.1 List vendor numbers and vendor names
+   DEBUG: 2024-01-16 15:48:53,943:      pdf_renderer.py:  470: printSegment: SELECT v_code, v_name FROM vendor;
+   DEBUG: 2024-01-16 15:48:53,944:      pdf_renderer.py:  470: printSegment:  v_code |          v_name
+   DEBUG: 2024-01-16 15:48:53,945:      pdf_renderer.py:  470: printSegment: --------+-----------------
+   DEBUG: 2024-01-16 15:48:53,946:      pdf_renderer.py:  470: printSegment:     21225 | Bryson, Inc.
+   DEBUG: 2024-01-16 15:48:53,947:      pdf_renderer.py:  470: printSegment:     21226 | Superloo, Inc.
+   DEBUG: 2024-01-16 15:48:53,948:      pdf_renderer.py:  470: printSegment:     21231 | D&E Supply
+   DEBUG: 2024-01-16 15:48:53,950:      pdf_renderer.py:  470: printSegment:     21344 | Gomez Bros.
+   DEBUG: 2024-01-16 15:48:53,951:      pdf_renderer.py:  470: printSegment:     22567 | Dome Supply
+   DEBUG: 2024-01-16 15:48:53,952:      pdf_renderer.py:  470: printSegment:     23119 | Randsets Ltd.
+   DEBUG: 2024-01-16 15:48:53,953:      pdf_renderer.py:  470: printSegment:     24004 | Brackman Bros.
+   DEBUG: 2024-01-16 15:48:53,954:      pdf_renderer.py:  470: printSegment:     24288 | ORDVA, Inc.
+   DEBUG: 2024-01-16 15:48:53,955:      pdf_renderer.py:  470: printSegment:     25443 | B&K, Inc.
+   DEBUG: 2024-01-16 15:48:53,956:      pdf_renderer.py:  470: printSegment:     25501 | Damal Supplies
+   DEBUG: 2024-01-16 15:48:53,957:      pdf_renderer.py:  470: printSegment:     25595 | Rubicon Systems
+   DEBUG: 2024-01-16 15:48:53,958:      pdf_renderer.py:  470: printSegment: 3.2 Show the vendor count per state
+   DEBUG: 2024-01-16 15:48:53,960:      pdf_renderer.py:  470: printSegment: SELECT v_state, COUNT(*) FROM vendor GROUP BY v_state;
+   DEBUG: 2024-01-16 15:48:53,961:      pdf_renderer.py:  470: printSegment:  v_state | count
+   DEBUG: 2024-01-16 15:48:53,962:      pdf_renderer.py:  470: printSegment: ---------+-------
+   DEBUG: 2024-01-16 15:48:53,962:      pdf_renderer.py:  470: printSegment:  TN            |          5
+   DEBUG: 2024-01-16 15:48:53,963:      pdf_renderer.py:  470: printSegment:  FL            |          3
+   DEBUG: 2024-01-16 15:48:53,964:      pdf_renderer.py:  470: printSegment:  KY            |          1
+   DEBUG: 2024-01-16 15:48:53,965:      pdf_renderer.py:  470: printSegment:  GA            |          2
+   DEBUG: 2024-01-16 15:48:53,967:      pdf_renderer.py:  470: printSegment: 4.1 Based on price, what is the most expensive product?
+   DEBUG: 2024-01-16 15:48:53,969:      pdf_renderer.py:  470: printSegment: SELECT p_code, p_descript FROM product ORDER BY p_price LIMIT 1;
+   DEBUG: 2024-01-16 15:48:53,970:      pdf_renderer.py:  470: printSegment:     p_code    |                  p_descript
+   DEBUG: 2024-01-16 15:48:53,972:      pdf_renderer.py:  470: printSegment: ----------+-----------------------------
+   DEBUG: 2024-01-16 15:48:53,973:      pdf_renderer.py:  470: printSegment:  54778-2T | Rat-tail file, 1/8-in. fine
+   DEBUG: 2024-01-16 15:48:53,974:      pdf_renderer.py:  470: printSegment: 4.2 How much quantity on hand is available for the most expensive product?
+   DEBUG: 2024-01-16 15:48:53,976:      pdf_renderer.py:  470: printSegment: SELECT p_qoh FROM product ORDER BY p_price LIMIT 1
+   DEBUG: 2024-01-16 15:48:53,977:      pdf_renderer.py:  470: printSegment:  p_qoh
+   DEBUG: 2024-01-16 15:48:53,978:      pdf_renderer.py:  470: printSegment: -------
+   DEBUG: 2024-01-16 15:48:53,978:      pdf_renderer.py:  470: printSegment:         43
+   DEBUG: 2024-01-16 15:48:53,982:      pdf_renderer.py:  470: printSegment: 5. Display the product description, quantity on hand, and price for all products that have a discount greater
+   DEBUG: 2024-01-16 15:48:53,983:      pdf_renderer.py:  470: printSegment: than 5%
+   DEBUG: 2024-01-16 15:48:53,984:      pdf_renderer.py:  470: printSegment: SELECT p_description, p_qoh, p_price FROM product WHERE p_discount > 0.05;
+   DEBUG: 2024-01-16 15:48:53,986:      pdf_renderer.py:  470: printSegment:                           p_descript                            | p_qoh | p_price
+   DEBUG: 2024-01-16 15:48:53,988:      pdf_renderer.py:  470: printSegment: -------------------------------------+-------+---------
+   DEBUG: 2024-01-16 15:48:53,989:      pdf_renderer.py:  470: printSegment:  Claw hammer                                                  |        23 |        9.95
+   DEBUG: 2024-01-16 15:48:53,991:      pdf_renderer.py:  470: printSegment:  Steel matting, 4'x8'x1/6", .5" mesh |        18 |    119.95
+   DEBUG: 2024-01-16 15:48:53,998:      pdf_renderer.py:  470: printSegment: 6. Generate a listing of products offered by each vendor. List vendor name, product code and product name.
+   DEBUG: 2024-01-16 15:48:54,000:      pdf_renderer.py:  470: printSegment: Sort by vendor name and product code
+   DEBUG: 2024-01-16 15:48:54,004:      pdf_renderer.py:  470: printSegment: SELECT v_name, p_code, p_descript FROM product JOIN vendor ON vendor.v_code =
+   DEBUG: 2024-01-16 15:48:54,006:      pdf_renderer.py:  470: printSegment: product.v_code ORDER BY v_name, p_code;
+   DEBUG: 2024-01-16 15:48:54,007:      pdf_renderer.py:  470: printSegment:           v_name            |    p_code    |                          p_descript
+   DEBUG: 2024-01-16 15:48:54,009:      pdf_renderer.py:  470: printSegment: -----------------+----------+-------------------------------------
+   DEBUG: 2024-01-16 15:48:54,010:      pdf_renderer.py:  470: printSegment:  Bryson, Inc.        | 11QER/31 | Power painter, 15 psi., 3-nozzle
+   DEBUG: 2024-01-16 15:48:54,012:      pdf_renderer.py:  470: printSegment:  Bryson, Inc.        | 13-Q2/P2 | 7.25-in. pwr. saw blade
+   DEBUG: 2024-01-16 15:48:54,013:      pdf_renderer.py:  470: printSegment:  Bryson, Inc.        | 23109-HB | Claw hammer
+   DEBUG: 2024-01-16 15:48:54,014:      pdf_renderer.py:  470: printSegment:  Bryson, Inc.        | SM-18277 | 1.25-in. metal screw, 25
+   DEBUG: 2024-01-16 15:48:54,016:      pdf_renderer.py:  470: printSegment:  D&E Supply            | SW-23116 | 2.5-in. wd. screw, 50
+   DEBUG: 2024-01-16 15:48:54,017:      pdf_renderer.py:  470: printSegment:  Gomez Bros.          | 14-Q1/L3 | 9.00-in. pwr. saw blade
+   DEBUG: 2024-01-16 15:48:54,019:      pdf_renderer.py:  470: printSegment:  Gomez Bros.          | 54778-2T | Rat-tail file, 1/8-in. fine
+   DEBUG: 2024-01-16 15:48:54,020:      pdf_renderer.py:  470: printSegment:  ORDVA, Inc.          | 2232/QTY | B&D jigsaw, 12-in. blade
+   DEBUG: 2024-01-16 15:48:54,022:      pdf_renderer.py:  470: printSegment:  ORDVA, Inc.          | 2232/QWE | B&D jigsaw, 8-in. blade
+   DEBUG: 2024-01-16 15:48:54,023:      pdf_renderer.py:  470: printSegment:  ORDVA, Inc.          | 89-WRE-Q | Hicut chain saw, 16 in.
+   DEBUG: 2024-01-16 15:48:54,024:      pdf_renderer.py:  470: printSegment:  Randsets Ltd.      | 1546-QQ2 | Hrd. cloth, 1/4-in., 2x50
+   DEBUG: 2024-01-16 15:48:54,025:      pdf_renderer.py:  470: printSegment:  Randsets Ltd.      | 1558-QW1 | Hrd. cloth, 1/2-in., 3x50
+   DEBUG: 2024-01-16 15:48:54,027:      pdf_renderer.py:  470: printSegment:  Rubicon Systems | 2238/QPD | B&D cordless drill, 1/2-in.
+   DEBUG: 2024-01-16 15:48:54,028:      pdf_renderer.py:  470: printSegment:  Rubicon Systems | WR3/TT3    | Steel matting, 4'x8'x1/6", .5" mesh
+   DEBUG: 2024-01-16 15:48:54,031:      pdf_renderer.py:  470: printSegment: 7. What is the average discount (rounded to the nearest cent) given by each vendor?
+   DEBUG: 2024-01-16 15:48:54,040:      pdf_renderer.py:  470: printSegment: SELECT v_name AS vendor_name, ROUND(AVG(p_discount), 2) AS average_discount
+   DEBUG: 2024-01-16 15:48:54,042:      pdf_renderer.py:  470: printSegment: FROM product JOIN vendor ON vendor.v_code = product.v_code GROUP BY v_name;
+   DEBUG: 2024-01-16 15:48:54,043:      pdf_renderer.py:  470: printSegment:       vendor_name      | average_discount
+   DEBUG: 2024-01-16 15:48:54,044:      pdf_renderer.py:  470: printSegment: -----------------+------------------
+   DEBUG: 2024-01-16 15:48:54,046:      pdf_renderer.py:  470: printSegment:  Bryson, Inc.        |                          0.04
+   DEBUG: 2024-01-16 15:48:54,047:      pdf_renderer.py:  470: printSegment:  Gomez Bros.          |                          0.00
+   DEBUG: 2024-01-16 15:48:54,048:      pdf_renderer.py:  470: printSegment:  Randsets Ltd.      |                          0.00
+   DEBUG: 2024-01-16 15:48:54,050:      pdf_renderer.py:  470: printSegment:  D&E Supply            |                          0.00
+   DEBUG: 2024-01-16 15:48:54,052:      pdf_renderer.py:  470: printSegment:  ORDVA, Inc.          |                          0.05
+   DEBUG: 2024-01-16 15:48:54,053:      pdf_renderer.py:  470: printSegment:  Rubicon Systems |                          0.08
+   DEBUG: 2024-01-16 15:48:54,054:      pdf_renderer.py:  470: printSegment: 8.1 What is the vendor with most 
+   DEBUG: 2024-01-16 15:48:54,055:      pdf_renderer.py:  470: printSegment: "
+   DEBUG: 2024-01-16 15:48:54,056:      pdf_renderer.py:  470: printSegment: products on hand
+   DEBUG: 2024-01-16 15:48:54,057:      pdf_renderer.py:  470: printSegment: "
+   DEBUG: 2024-01-16 15:48:54,058:      pdf_renderer.py:  470: printSegment:  for a particular product?
+   DEBUG: 2024-01-16 15:48:54,070:      pdf_renderer.py:  470: printSegment: SELECT v_name AS vendor, p_descript AS product, p_qoh AS products_on_hand
+   DEBUG: 2024-01-16 15:48:54,073:      pdf_renderer.py:  470: printSegment: FROM product JOIN vendor ON product.v_code = vendor.v_code ORDER BY p_qoh
+   DEBUG: 2024-01-16 15:48:54,074:      pdf_renderer.py:  470: printSegment: DESC LIMIT 1;
+   DEBUG: 2024-01-16 15:48:54,076:      pdf_renderer.py:  470: printSegment:       vendor      |                product                | products_on_hand
+   DEBUG: 2024-01-16 15:48:54,077:      pdf_renderer.py:  470: printSegment: ------------+-----------------------+------------------
+   DEBUG: 2024-01-16 15:48:54,079:      pdf_renderer.py:  470: printSegment:  D&E Supply | 2.5-in. wd. screw, 50 |                            237
+   DEBUG: 2024-01-16 15:48:54,080:      pdf_renderer.py:  470: printSegment: 8.2 What is the vendor with most 
+   DEBUG: 2024-01-16 15:48:54,081:      pdf_renderer.py:  470: printSegment: "
+   DEBUG: 2024-01-16 15:48:54,082:      pdf_renderer.py:  470: printSegment: products on hand
+   DEBUG: 2024-01-16 15:48:54,083:      pdf_renderer.py:  470: printSegment: "
+   DEBUG: 2024-01-16 15:48:54,091:      pdf_renderer.py:  470: printSegment:  for all its products combined? List both the vendor
+   DEBUG: 2024-01-16 15:48:54,092:      pdf_renderer.py:  470: printSegment: name and the number of products. Is it the same vendor in both cases?
+   DEBUG: 2024-01-16 15:48:54,103:      pdf_renderer.py:  470: printSegment: SELECT v_name, SUM(p_qoh) AS total_qoh FROM product JOIN vendor ON
+   DEBUG: 2024-01-16 15:48:54,105:      pdf_renderer.py:  470: printSegment: product.v_code = vendor.v_code GROUP BY v_name ORDER BY total_qoh DESC LIMIT
+   DEBUG: 2024-01-16 15:48:54,106:      pdf_renderer.py:  470: printSegment: 1;
+   DEBUG: 2024-01-16 15:48:54,107:      pdf_renderer.py:  470: printSegment:       v_name      | total_qoh
+   DEBUG: 2024-01-16 15:48:54,108:      pdf_renderer.py:  470: printSegment: ------------+-----------
+   DEBUG: 2024-01-16 15:48:54,109:      pdf_renderer.py:  470: printSegment:  D&E Supply |              237
+   DEBUG: 2024-01-16 15:48:54,110:      pdf_renderer.py:  470: printSegment: It is the same vendor.
+   DEBUG: 2024-01-16 15:48:54,120:      pdf_renderer.py:  470: printSegment: 9. Generate a listing of customer purchases, including the subtotals for each of the invoice line numbers; sort
+   DEBUG: 2024-01-16 15:48:54,121:      pdf_renderer.py:  470: printSegment: output by customer code, invoice number and the line
+   DEBUG: 2024-01-16 15:48:54,122:      pdf_renderer.py:  470: printSegment: _
+   DEBUG: 2024-01-16 15:48:54,123:      pdf_renderer.py:  470: printSegment: number
+   DEBUG: 2024-01-16 15:48:54,124:      pdf_renderer.py:  470: printSegment: SELECT customer.cus_code,
+   DEBUG: 2024-01-16 15:48:54,125:      pdf_renderer.py:  470: printSegment:               line.inv_number,
+   DEBUG: 2024-01-16 15:48:54,126:      pdf_renderer.py:  470: printSegment:               invoice.inv_date,
+   DEBUG: 2024-01-16 15:48:54,127:      pdf_renderer.py:  470: printSegment:               line.line_number,
+   DEBUG: 2024-01-16 15:48:54,128:      pdf_renderer.py:  470: printSegment:               line.p_code,
+   DEBUG: 2024-01-16 15:48:54,130:      pdf_renderer.py:  470: printSegment:               line.line_units,
+   DEBUG: 2024-01-16 15:48:54,131:      pdf_renderer.py:  470: printSegment:               line.line_price,
+   DEBUG: 2024-01-16 15:48:54,141:      pdf_renderer.py:  470: printSegment:               CONCAT(customer.cus_fname, ' ', CASE WHEN
+   DEBUG: 2024-01-16 15:48:54,147:      pdf_renderer.py:  470: printSegment: customer.cus_initial IS NOT NULL THEN CONCAT(customer.cus_initial,
+   DEBUG: 2024-01-16 15:48:54,149:      pdf_renderer.py:  470: printSegment: '. ') ELSE '' END, customer.cus_lname) AS customer_name,
+   DEBUG: 2024-01-16 15:48:54,150:      pdf_renderer.py:  470: printSegment:               ROUND((line_units * line_price), 2) AS Subtotal
+   DEBUG: 2024-01-16 15:48:54,151:      pdf_renderer.py:  470: printSegment: FROM line
+   DEBUG: 2024-01-16 15:48:54,152:      pdf_renderer.py:  470: printSegment: JOIN invoice ON line.inv_number = invoice.inv_number
+   DEBUG: 2024-01-16 15:48:54,153:      pdf_renderer.py:  470: printSegment: JOIN customer ON invoice.cus_code = customer.cus_code
+   DEBUG: 2024-01-16 15:48:54,155:      pdf_renderer.py:  470: printSegment: ORDER BY customer.cus_code, invoice.inv_number, line.line_number;
+   DEBUG: 2024-01-16 15:48:54,161:      pdf_renderer.py:  470: printSegment:  cus_code | inv_number |    inv_date    | line_number |    p_code    |
+   DEBUG: 2024-01-16 15:48:54,162:      pdf_renderer.py:  470: printSegment: line_units | line_price |    customer_name    | subtotal
+   DEBUG: 2024-01-16 15:48:54,164:      pdf_renderer.py:  470: printSegment: ----------+------------+------------+-------------+----------+------------+------------+-----------------+----------
+   DEBUG: 2024-01-16 15:48:54,177:      pdf_renderer.py:  470: printSegment:         10011 |              1002 | 2016-01-16 |                      1 | 54778-2T |             
+   DEBUG: 2024-01-16 15:48:54,179:      pdf_renderer.py:  470: printSegment: 2.00 |              4.99 | Leona K. Dunne    |          9.98
+   DEBUG: 2024-01-16 15:48:54,191:      pdf_renderer.py:  470: printSegment:         10011 |              1004 | 2016-01-17 |                      1 | 54778-2T |             
+   DEBUG: 2024-01-16 15:48:54,192:      pdf_renderer.py:  470: printSegment: 3.00 |              4.99 | Leona K. Dunne    |        14.97
+   DEBUG: 2024-01-16 15:48:54,205:      pdf_renderer.py:  470: printSegment:         10011 |              1004 | 2016-01-17 |                      2 | 23109-HB |             
+   DEBUG: 2024-01-16 15:48:54,206:      pdf_renderer.py:  470: printSegment: 2.00 |              9.95 | Leona K. Dunne    |        19.90
+   DEBUG: 2024-01-16 15:48:54,218:      pdf_renderer.py:  470: printSegment:         10011 |              1008 | 2016-01-17 |                      1 | PVC23DRT |             
+   DEBUG: 2024-01-16 15:48:54,220:      pdf_renderer.py:  470: printSegment: 5.00 |              5.87 | Leona K. Dunne    |        29.35
+   DEBUG: 2024-01-16 15:48:54,230:      pdf_renderer.py:  470: printSegment:         10011 |              1008 | 2016-01-17 |                      2 | WR3/TT3    |             
+   DEBUG: 2024-01-16 15:48:54,231:      pdf_renderer.py:  470: printSegment: 3.00 |          119.95 | Leona K. Dunne    |      359.85
+   DEBUG: 2024-01-16 15:48:54,246:      pdf_renderer.py:  470: printSegment:         10011 |              1008 | 2016-01-17 |                      3 | 23109-HB |             
+   DEBUG: 2024-01-16 15:48:54,247:      pdf_renderer.py:  470: printSegment: 1.00 |              9.95 | Leona K. Dunne    |          9.95
+   DEBUG: 2024-01-16 15:48:54,258:      pdf_renderer.py:  470: printSegment:         10012 |              1003 | 2016-01-16 |                      1 | 2238/QPD |             
+   DEBUG: 2024-01-16 15:48:54,259:      pdf_renderer.py:  470: printSegment: 1.00 |            38.95 | Kathy W. Smith    |        38.95
+   DEBUG: 2024-01-16 15:48:54,270:      pdf_renderer.py:  470: printSegment:         10012 |              1003 | 2016-01-16 |                      2 | 1546-QQ2 |             
+   DEBUG: 2024-01-16 15:48:54,271:      pdf_renderer.py:  470: printSegment: 1.00 |            39.95 | Kathy W. Smith    |        39.95
+   DEBUG: 2024-01-16 15:48:54,282:      pdf_renderer.py:  470: printSegment:         10012 |              1003 | 2016-01-16 |                      3 | 13-Q2/P2 |             
+   DEBUG: 2024-01-16 15:48:54,283:      pdf_renderer.py:  470: printSegment: 5.00 |            14.99 | Kathy W. Smith    |        74.95
+   DEBUG: 2024-01-16 15:48:54,294:      pdf_renderer.py:  470: printSegment:         10014 |              1001 | 2016-01-16 |                      1 | 13-Q2/P2 |             
+   DEBUG: 2024-01-16 15:48:54,295:      pdf_renderer.py:  470: printSegment: 1.00 |            14.99 | Myron Orlando      |        14.99
+   DEBUG: 2024-01-16 15:48:54,309:      pdf_renderer.py:  470: printSegment:         10014 |              1001 | 2016-01-16 |                      2 | 23109-HB |             
+   DEBUG: 2024-01-16 15:48:54,310:      pdf_renderer.py:  470: printSegment: 1.00 |              9.95 | Myron Orlando      |          9.95
+   DEBUG: 2024-01-16 15:48:54,323:      pdf_renderer.py:  470: printSegment:         10014 |              1006 | 2016-01-17 |                      1 | SM-18277 |             
+   DEBUG: 2024-01-16 15:48:54,324:      pdf_renderer.py:  470: printSegment: 3.00 |              6.99 | Myron Orlando      |        20.97
+   DEBUG: 2024-01-16 15:48:54,335:      pdf_renderer.py:  470: printSegment:         10014 |              1006 | 2016-01-17 |                      2 | 2232/QTY |             
+   DEBUG: 2024-01-16 15:48:54,337:      pdf_renderer.py:  470: printSegment: 1.00 |          109.92 | Myron Orlando      |      109.92
+   DEBUG: 2024-01-16 15:48:54,349:      pdf_renderer.py:  470: printSegment:         10014 |              1006 | 2016-01-17 |                      3 | 23109-HB |             
+   DEBUG: 2024-01-16 15:48:54,351:      pdf_renderer.py:  470: printSegment: 1.00 |              9.95 | Myron Orlando      |          9.95
+   DEBUG: 2024-01-16 15:48:54,361:      pdf_renderer.py:  470: printSegment:         10014 |              1006 | 2016-01-17 |                      4 | 89-WRE-Q |             
+   DEBUG: 2024-01-16 15:48:54,363:      pdf_renderer.py:  470: printSegment: 1.00 |          256.99 | Myron Orlando      |      256.99
+   DEBUG: 2024-01-16 15:48:54,374:      pdf_renderer.py:  470: printSegment:         10015 |              1007 | 2016-01-17 |                      1 | 13-Q2/P2 |             
+   DEBUG: 2024-01-16 15:48:54,375:      pdf_renderer.py:  470: printSegment: 2.00 |            14.99 | Amy B. O'Brian    |        29.98
+   DEBUG: 2024-01-16 15:48:54,387:      pdf_renderer.py:  470: printSegment:         10015 |              1007 | 2016-01-17 |                      2 | 54778-2T |             
+   DEBUG: 2024-01-16 15:48:54,389:      pdf_renderer.py:  470: printSegment: 1.00 |              4.99 | Amy B. O'Brian    |          4.99
+   DEBUG: 2024-01-16 15:48:54,399:      pdf_renderer.py:  470: printSegment:         10018 |              1005 | 2016-01-17 |                      1 | PVC23DRT |           
+   DEBUG: 2024-01-16 15:48:54,400:      pdf_renderer.py:  470: printSegment: 12.00 |              5.87 | Anne G. Farriss |        70.44
+   DEBUG: 2024-01-16 15:48:54,413:      pdf_renderer.py:  470: printSegment: 10. List the total amount spent by each customer who made purchases during the current invoice cycle—that is,
+   DEBUG: 2024-01-16 15:48:54,439:      pdf_renderer.py:  470: printSegment: for the customers who appear in the INVOICE table; sort by customer code
+   DEBUG: 2024-01-16 15:48:54,450:      pdf_renderer.py:  470: printSegment: SELECT CONCAT(customer.cus_fname, ' ', CASE WHEN
+   DEBUG: 2024-01-16 15:48:54,456:      pdf_renderer.py:  470: printSegment: customer.cus_initial IS NOT NULL THEN CONCAT(customer.cus_initial,
+   DEBUG: 2024-01-16 15:48:54,457:      pdf_renderer.py:  470: printSegment: '. ') ELSE '' END, customer.cus_lname) AS customer_name,
+   DEBUG: 2024-01-16 15:48:54,459:      pdf_renderer.py:  470: printSegment:               ROUND(SUM(line.line_units * line.line_price), 2) AS
+   DEBUG: 2024-01-16 15:48:54,461:      pdf_renderer.py:  470: printSegment: total_amount_spent
+   DEBUG: 2024-01-16 15:48:54,461:      pdf_renderer.py:  470: printSegment: FROM invoice
+   DEBUG: 2024-01-16 15:48:54,463:      pdf_renderer.py:  470: printSegment: JOIN line ON invoice.inv_number = line.inv_number
+   DEBUG: 2024-01-16 15:48:54,464:      pdf_renderer.py:  470: printSegment: JOIN customer ON invoice.cus_code = customer.cus_code
+   DEBUG: 2024-01-16 15:48:54,465:      pdf_renderer.py:  470: printSegment: GROUP BY customer.cus_code, customer_name
+   DEBUG: 2024-01-16 15:48:54,466:      pdf_renderer.py:  470: printSegment: ORDER BY customer.cus_code;
+   DEBUG: 2024-01-16 15:48:54,468:      pdf_renderer.py:  470: printSegment:     customer_name    | total_amount_spent
+   DEBUG: 2024-01-16 15:48:54,470:      pdf_renderer.py:  470: printSegment: -----------------+--------------------
+   DEBUG: 2024-01-16 15:48:54,471:      pdf_renderer.py:  470: printSegment:  Leona K. Dunne    |                          444.00
+   DEBUG: 2024-01-16 15:48:54,472:      pdf_renderer.py:  470: printSegment:  Kathy W. Smith    |                          153.85
+   DEBUG: 2024-01-16 15:48:54,473:      pdf_renderer.py:  470: printSegment:  Myron Orlando      |                          422.77
+   DEBUG: 2024-01-16 15:48:54,474:      pdf_renderer.py:  470: printSegment:  Amy B. O'Brian    |                            34.97
+   DEBUG: 2024-01-16 15:48:54,475:      pdf_renderer.py:  470: printSegment:  Anne G. Farriss |                            70.44
+   DEBUG: 2024-01-16 15:48:54,477:      pdf_renderer.py:  470: printSegment: 11. Find a listing of customers who did not make purchases during the invoicing period; sort by customer
+   DEBUG: 2024-01-16 15:48:54,478:      pdf_renderer.py:  470: printSegment: code
+   DEBUG: 2024-01-16 15:48:54,480:      pdf_renderer.py:  470: printSegment: SELECT customer.cus_code,
+   DEBUG: 2024-01-16 15:48:54,490:      pdf_renderer.py:  470: printSegment:               CONCAT(customer.cus_fname, ' ', CASE WHEN
+   DEBUG: 2024-01-16 15:48:54,496:      pdf_renderer.py:  470: printSegment: customer.cus_initial IS NOT NULL THEN CONCAT(customer.cus_initial,
+   DEBUG: 2024-01-16 15:48:54,497:      pdf_renderer.py:  470: printSegment: '. ') ELSE '' END, customer.cus_lname) AS customer_name
+   DEBUG: 2024-01-16 15:48:54,499:      pdf_renderer.py:  470: printSegment: FROM customer
+   DEBUG: 2024-01-16 15:48:54,501:      pdf_renderer.py:  470: printSegment: LEFT JOIN invoice ON invoice.cus_code = customer.cus_code
+   DEBUG: 2024-01-16 15:48:54,502:      pdf_renderer.py:  470: printSegment: WHERE invoice.cus_code IS NULL
+   DEBUG: 2024-01-16 15:48:54,503:      pdf_renderer.py:  470: printSegment: ORDER BY customer.cus_code;
+   DEBUG: 2024-01-16 15:48:54,504:      pdf_renderer.py:  470: printSegment:  cus_code |    customer_name
+   DEBUG: 2024-01-16 15:48:54,506:      pdf_renderer.py:  470: printSegment: ----------+-----------------
+   DEBUG: 2024-01-16 15:48:54,507:      pdf_renderer.py:  470: printSegment:         10010 | Alfred A. Ramas
+   DEBUG: 2024-01-16 15:48:54,508:      pdf_renderer.py:  470: printSegment:         10013 | Paul F. Olowski
+   DEBUG: 2024-01-16 15:48:54,509:      pdf_renderer.py:  470: printSegment:         10016 | James G. Brown
+   DEBUG: 2024-01-16 15:48:54,510:      pdf_renderer.py:  470: printSegment:         10017 | George Williams
+   DEBUG: 2024-01-16 15:48:54,511:      pdf_renderer.py:  470: printSegment:         10019 | Olette K. Smith
+   DEBUG: 2024-01-16 15:48:54,513:      pdf_renderer.py:  470: printSegment: 12. Create a query to produce a summary of the value of products currently in inventory
+   DEBUG: 2024-01-16 15:48:54,515:      pdf_renderer.py:  470: printSegment: SELECT SUM(p_price * p_qoh) AS total_value FROM product;
+   DEBUG: 2024-01-16 15:48:54,516:      pdf_renderer.py:  470: printSegment:  total_value
+   DEBUG: 2024-01-16 15:48:54,516:      pdf_renderer.py:  470: printSegment: -------------
+   DEBUG: 2024-01-16 15:48:54,517:      pdf_renderer.py:  470: printSegment:         15084.52

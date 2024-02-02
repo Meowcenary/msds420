@@ -1,0 +1,91 @@
+Parking Spots
+---
+Id
+Longitude
+Latitude
+ParkingSpotTypeId (links to Parking Spot Types table)
+RateId (links to Rates table)
+StreetId (links to streets table)
+
+Rates
+---
+Cost (the cost per period)
+Period (e.g Hourly, Daily, etc
+
+Parking Spot Types (e.g Ramp, Covered, Street, etc.)
+---
+Id
+Type
+
+Streets
+---
+Id
+Name
+
+Intersections
+---
+Id
+StreetId (links to Streets table)
+InterectingStreetId (links to Streets table)
+Longitude
+Latitude
+
+might be interested in finding parking spaces near  the intersection of two streets.
+
+The earthdistance module provided by postgres https://www.postgresql.org/docs/current/earthdistance.html would be
+installed first. The query for nearest and cheapest parking  would look something like this:
+
+DO $$ -- this declares an anonymous code block - https://www.postgresql.org/docs/current/sql-do.html
+DECLARE CurrentLocation point := '(-87.6298, 41.8781)';  -- Chicago, but can be set to something more granular easily
+BEGIN
+	SELECT *
+	FROM ParkingSpots
+	ORDER BY
+	earth_distance((CurrentLocation.longitude, CurrentLocation.latitude), (ParkingSpots.Longitude, ParkingSpots.latitude)),
+	Cost
+	ASC LIMIT 1;
+END $$;
+
+From my perspective "covered and secure parking ramp" could be a type in itself with "covered", "secure", and
+"parking ramp" all being separate types. There's probably a better way to handle these descriptors, maybe a Descriptors
+table or something similar, but I think this is good enough for the discussion.
+
+The query would assume a ParkingSpotType of "Covered And Secure Ramp" with an Id of 4 and would look something like
+this:
+
+SELECT *
+FROM ParkingSpots
+JOIN ParkingSpotTypes ON ParkingSpots.ParkingSpotTypeId = ParkingSpotTypes.Id
+WHERE ParkingSpotTypes.Id = 4 -- id corresponds to "Covered And Secure Ramp"
+ORDER BY earth_distance(
+  (CurrentLocation.longitude, CurrentLocation.latitude), -- could replace with another location if planning ahead e.g looking for parking near a baseball park stadium and not current location
+	(ParkingSpots.Longitude, ParkingSpots.latitude)
+), -- find the nearest
+Cost ASC
+LIMIT 5; -- realistically by the time you hit the fifth covered parking ramp it's going to be fairly far away
+
+This final query for finding a space near the intersection of two streets is a little trickier. I thought it might be
+possible to just have a Streets table, but the issue is that there could be many streets that intersect with a large
+street. For example, in Chicago Belmont Avenue runs from the lakefront in the east all the way to DuPage county in the
+west. I'm not really sure how best to approach this from a database perspective, but creating an intersection table as
+some other people have done for this discussion seemed like a good approach. I think you could approach this as a one to
+many relationship with the larger or more traveled street having many streets that intersect with it, but it felt more
+intuitive to me to have a many to many relationship where every intersection would be represented with a street under
+consideration (i'm not sure how to phrase this) and the streets it intersects with. It's a little naive, but you could
+then have two records for every intersection with the intersecting street then becoming the street under consideration
+and the former street under consideration becoming the interesecting street (E.g Belmont instersects with Halsted. Halsted
+also intersects with Belmont).
+
+With all of that, a potential query to find the parking spot nearest to the intersection of Belmont and Halsted would
+look something like this:
+
+SELECT *
+FROM ParkingSpots
+JOIN Streets ON ParkingSpots.StreetId = Streets.Id
+JOIN Intersections on Streets.Id = Intersections.StreetId
+WHERE Streets.StreetName LIKE '%Belmont Ave%'
+	OR Streets.StreetName LIKE '%Halsted St%'
+ORDER BY earth_distance(
+	(CurrentLocation.longitude, CurrentLocation.latitude),
+	(ParkingSpots.Longitude, ParkingSpots.latitude)
+) ASC;
